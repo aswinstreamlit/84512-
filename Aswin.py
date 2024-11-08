@@ -1,9 +1,6 @@
 import streamlit as st
 from datetime import datetime, timedelta
 
-# Add a logo from the local system at the top of the app
-st.image("C:/Users/Varun/Downloads/Full Logo (1).png", width=200)  # Adjust the path and width as necessary
-
 # Custom CSS to add more space above the main heading, reduce header size, add borders, and make headings bold
 st.markdown("""
     <style>
