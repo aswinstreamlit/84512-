@@ -1,5 +1,6 @@
 import streamlit as st
 from datetime import datetime, timedelta
+from dateutil.relativedelta import relativedelta  # Import for accurate month addition
 
 # Custom CSS to add more space above the main heading, reduce header size, add borders, and make headings bold
 st.markdown("""
@@ -8,11 +9,12 @@ st.markdown("""
         font-size: 44.8px; /* Increased size by 60% from the original 28px */
         text-transform: uppercase; /* Make text uppercase */
         margin-top: 40px; /* Increase space above the heading by 2cm */
-        text-align: center; /* Center the main heading */
+        text-align: left; /* Align the first line to the left */
         line-height: 1.2; /* Adjust line height */
     }
     h2 span {
-        display: block; /* Make the second line block-level to center it */
+        display: block; /* Make the second line block-level */
+        text-align: center; /* Center the second line */
     }
     h3 {
         font-size: 24px;
@@ -29,7 +31,8 @@ st.markdown("""
         margin-top: 10px;
         margin-bottom: 10px;
         font-weight: bold;
-        font-family: "Comic Sans MS", "Comic Sans", cursive; /* Apply Comic Sans font */
+        text-transform: uppercase; /* Make subheadings uppercase like main heading */
+        text-align: left; /* Keep subheadings aligned to the left */
     }
     .input-container {
         width: 100%;
@@ -122,9 +125,9 @@ if date_input_str:
         st.error("Please enter the name of the company.")  # Error if company name is not provided
     else:
         try:
-            # If input date is after March 1, 2024, apply the 90-day rule
+            # If input date is after March 1, 2024, apply the 3-month rule using relativedelta
             if input_date > threshold_date:
-                calculated_date = input_date + timedelta(days=90)
+                calculated_date = input_date + relativedelta(months=3)
                 st.markdown(f"<h3>{calculated_date.strftime('%B %d, %Y')}</h3>", unsafe_allow_html=True)
             else:
                 # Apply the table rules based on the month and day (ignoring the year)
