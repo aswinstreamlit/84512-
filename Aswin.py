@@ -2,11 +2,16 @@ import streamlit as st
 from datetime import datetime, timedelta
 from dateutil.relativedelta import relativedelta  # Import for accurate month addition
 
-# Add the heading at the top of the webpage
+# Add the heading at the top of the webpage with alignment adjustments
 st.markdown("""
-    <h1 style="font-size: 49.28px; font-weight: bold; text-align: left; margin-top: 10px;">
-        CORPORATE TAX REGISTRATION DEADLINE CALCULATOR
-    </h1>
+    <div style="display: flex; flex-direction: column; align-items: flex-start; margin-top: 10px;">
+        <span style="font-size: 49.28px; font-weight: bold; text-align: left;">
+            CORPORATE TAX REGISTRATION
+        </span>
+        <span style="font-size: 49.28px; font-weight: bold; text-align: left; padding-left: 30px;">
+            DEADLINE CALCULATOR
+        </span>
+    </div>
 """, unsafe_allow_html=True)
 
 # Custom CSS to add more space above the main heading, reduce header size, add borders, and make headings bold
@@ -69,6 +74,7 @@ st.markdown("""
     .contact-text {
         font-size: 17px; /* Reduced size by 15% from a typical 20px size */
         margin-top: 20px;
+        text-align: right; /* Align text to the right */
     }
     </style>
 """, unsafe_allow_html=True)
@@ -163,7 +169,9 @@ if date_input_str:
         except NameError:
             st.error("Please enter a valid date.")
 
-# Email link for contact
+# Email link for contact, aligned to the right
 st.markdown("""
-    <div class="contact-text">Contact us via email: <a href="mailto:akhilesh@finitwell.com">akhilesh@finitwell.com</a></div>
+    <div class="contact-text" style="text-align: right;">
+        Contact us via email: <a href="mailto:akhilesh@finitwell.com">akhilesh@finitwell.com</a>
+    </div>
 """, unsafe_allow_html=True)
