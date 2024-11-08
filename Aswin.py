@@ -6,7 +6,7 @@ from dateutil.relativedelta import relativedelta  # Import for accurate month ad
 st.markdown("""
     <style>
     h2 {
-        font-size: 54.8px; /* Increased size by 60% from the original 28px */
+        font-size: 64.8px; /* Increased size by 60% from the original 28px */
         text-transform: uppercase; /* Make text uppercase */
         margin-top: 40px; /* Increase space above the heading by 2cm */
         text-align: left; /* Align the first line to the left */
