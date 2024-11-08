@@ -4,9 +4,11 @@ from datetime import datetime, timedelta
 # Custom CSS to add more space above the main heading, reduce header size, add borders, and make headings bold
 st.markdown("""
     <style>
-    h2 {
-        font-size: 28px;
-        margin-top: 40px; /* Increase space above the heading by 2cm */
+    h1 {
+        font-size: 35px; /* Increased by 25% for better visibility */
+        text-align: center; /* Center-align the heading */
+        margin-top: 40px; /* Increase space above the heading */
+        text-transform: uppercase; /* Capitalize the heading */
     }
     h3 {
         font-size: 24px;
@@ -41,8 +43,8 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-# Title for the app
-st.markdown("<h2>Corporate Tax Registration Deadline Calculator</h2>", unsafe_allow_html=True)
+# Title for the app, in full capital letters and center-aligned
+st.markdown("<h1>Corporate Tax Registration Deadline Calculator</h1>", unsafe_allow_html=True)
 
 # Create two columns, giving more width to the second column
 col1, col2 = st.columns([1, 2])  # Adjust ratio here (1:2 ratio)
