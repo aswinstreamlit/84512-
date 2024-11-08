@@ -2,11 +2,16 @@ import streamlit as st
 from datetime import datetime, timedelta
 from dateutil.relativedelta import relativedelta  # Import for accurate month addition
 
-# Add the heading at the top of the webpage
+# Add the heading at the top of the webpage with alignment adjustments
 st.markdown("""
-    <h1 style="font-size: 49.28px; font-weight: bold; text-align: left; margin-top: 10px;">
-        CORPORATE TAX REGISTRATION DEADLINE CALCULATOR
-    </h1>
+    <div style="display: flex; flex-direction: column; align-items: flex-start; margin-top: 10px;">
+        <span style="font-size: 49.28px; font-weight: bold; text-align: left;">
+            CORPORATE TAX REGISTRATION
+        </span>
+        <span style="font-size: 49.28px; font-weight: bold; text-align: left; padding-left: 30px;">
+            DEADLINE CALCULATOR
+        </span>
+    </div>
 """, unsafe_allow_html=True)
 
 # Custom CSS to add more space above the main heading, reduce header size, add borders, and make headings bold
