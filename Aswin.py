@@ -6,9 +6,7 @@ from dateutil.relativedelta import relativedelta  # Import for accurate month ad
 st.markdown("""
     <div style="display: flex; flex-direction: column; align-items: flex-start; margin-top: 10px;">
         <span style="font-size: 49.28px; font-weight: bold; text-align: left;"> 
-        CORPORATE TAX 
-        </span>
-        REGISTRATION DEADLINE CALCULATOR
+        CORPORATE TAX REGISTRATION DEADLINE CALCULATOR
         </span>
     </div>
 """, unsafe_allow_html=True)
