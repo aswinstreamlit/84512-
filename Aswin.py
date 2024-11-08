@@ -1,4 +1,11 @@
-import streamlit as st
+import streamlit as st  # Importing Streamlit at the top
+
+# Add the heading at the top of the webpage
+st.markdown("""
+    <h1 style="font-size: 49.28px; font-weight: bold; text-align: left; margin-top: 10px;">
+        CORPORATE TAX REGISTRATION DEADLINE CALCULATOR
+    </h1>
+""", unsafe_allow_html=True)
 from datetime import datetime, timedelta
 from dateutil.relativedelta import relativedelta  # Import for accurate month addition
 
