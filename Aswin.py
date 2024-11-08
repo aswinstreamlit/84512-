@@ -11,6 +11,7 @@ st.markdown("""
         margin-top: 40px; /* Increase space above the heading by 2cm */
         text-align: left; /* Align the first line to the left */
         line-height: 1.2; /* Adjust line height */
+        font-weight: bold; /* Make the main heading bold */
     }
     h2 span {
         display: block; /* Make the second line block-level */
@@ -150,3 +151,8 @@ if date_input_str:
         
         except NameError:
             st.error("Please enter a valid date.")
+
+# Email link for contact
+st.markdown("""
+    <div class="smaller-heading">For further assistance, please contact us via email: <a href="mailto:akhilesh@finitwell.com">akhilesh@finitwell.com</a></div>
+""", unsafe_allow_html=True)
