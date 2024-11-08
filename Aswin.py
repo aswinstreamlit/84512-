@@ -58,6 +58,11 @@ st.markdown("""
     div.stButton > button:hover {
         background-color: #3C6E9C; /* Slightly lighter blue when hovered */
     }
+
+    .contact-text {
+        font-size: 17px; /* Reduced size by 15% from a typical 20px size */
+        margin-top: 20px;
+    }
     </style>
 """, unsafe_allow_html=True)
 
@@ -74,13 +79,17 @@ col1, col2 = st.columns(2)
 # Date input widget in the first column with smaller heading
 with col1:
     st.markdown('<div class="smaller-heading">Establishment Date</div>', unsafe_allow_html=True)
-    date_input_str = st.text_input("", placeholder="DD-MM-YYYY or DD/MM/YYYY")  # Only placeholder for date input
+    date_input_str = st.text_input(
+        "",
+        placeholder="DD-MM-YYYY or DD/MM/YYYY",
+        help="Enter the establishment date in the format DD-MM-YYYY or DD/MM/YYYY"
+    )
 
+    input_date = None
     # If a date is manually typed, try to parse it
     if date_input_str:
         # Replace slashes with dashes to normalize the date format
         date_input_str = date_input_str.replace("/", "-")
-        
         try:
             # Parse the manually entered date in DD-MM-YYYY format
             input_date = datetime.strptime(date_input_str, "%d-%m-%Y").date()
@@ -90,12 +99,14 @@ with col1:
 # Company name input moved to the right column
 with col2:
     st.markdown('<div class="smaller-heading">Company Name</div>', unsafe_allow_html=True)
-    company_name = st.text_input("Enter the Company Name")
+    company_name = st.text_input(
+        "Enter the Company Name",
+        help="Provide the registered name of the company"
+    )
 
 # Function to get deadline based on the month and day (ignoring the year)
 def get_deadline_based_on_rules(input_date):
     month_day = (input_date.month, input_date.day)
-    
     if (1, 1) <= month_day <= (2, 29):  # Jan 1 - Feb 29
         return "31 May 2024"
     elif (3, 1) <= month_day <= (4, 30):  # Mar 1 - Apr 30
@@ -114,7 +125,7 @@ def get_deadline_based_on_rules(input_date):
         return "31 Dec 2024"
     return None
 
-# Define the threshold date for 90-day rule
+# Define the threshold date for the 90-day rule
 threshold_date = datetime(2024, 3, 1).date()
 
 # Display the deadline for corporate tax registration below
@@ -154,5 +165,5 @@ if date_input_str:
 
 # Email link for contact
 st.markdown("""
-    <div class="smaller-heading">For further assistance, please contact us via email: <a href="mailto:akhilesh@finitwell.com">akhilesh@finitwell.com</a></div>
+    <div class="contact-text">Contact us via email: <a href="mailto:akhilesh@finitwell.com">akhilesh@finitwell.com</a></div>
 """, unsafe_allow_html=True)
